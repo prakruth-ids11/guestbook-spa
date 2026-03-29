@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs'); // to save messages
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // parse JSON and URL-encoded data
 app.use(bodyParser.urlencoded({ extended: true }));
