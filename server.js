@@ -12,6 +12,9 @@ app.use(bodyParser.json());
 // serve static files (your HTML, CSS, JS)
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 // save messages to a JSON file
 app.post('/submit', (req, res) => {
     const { name, message } = req.body;
